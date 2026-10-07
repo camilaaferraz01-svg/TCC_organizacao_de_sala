@@ -1,4 +1,3 @@
-﻿# TCC_organizacao_de_sala
 # Grêmio Estudantil — Ranking das Salas
 
 Protótipo em HTML, CSS e JavaScript inspirado na referência enviada.

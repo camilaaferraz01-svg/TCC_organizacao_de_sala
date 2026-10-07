@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema de organização das salas - Grêmio Estudantil">
+  <title>Grêmio Estudantil | Ranking das Salas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🧹</div>
+        <div>
+          <h1>Grêmio</h1>
+          <span>Estudantil</span>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <button class="nav-item active" data-view="gremioView">🏆 <span>Painel do Grêmio</span></button>
+        <button class="nav-item" data-view="alunoView">🎓 <span>Portal do Aluno</span></button>
+        <button class="nav-item" data-view="rankingView">📊 <span>Ranking</span></button>
+        <button class="nav-item" data-view="regrasView">⚙️ <span>Regras</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="role-badge">
+          <span class="status-dot"></span>
+          <div>
+            <small>Modo atual</small>
+            <strong>Grêmio</strong>
+          </div>
+        </div>
+        <p>As avaliações só podem ser lançadas pelo Grêmio.</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+        <div class="topbar-title">
+          <span id="pageKicker">Gestão escolar</span>
+          <h2 id="pageTitle">Painel do Grêmio</h2>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" title="Notificações">🔔</button>
+          <div class="profile">
+            <div class="avatar">G</div>
+            <div>
+              <strong>Grêmio</strong>
+              <small>Administrador</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- PAINEL DO GRÊMIO -->
+      <section class="view active" id="gremioView">
+        <div class="hero-banner">
+          <div>
+            <span class="eyebrow">ORGANIZAÇÃO DAS SALAS • MANHÃ</span>
+            <h3>Vamos manter nossa escola cada vez melhor! 🧹✨</h3>
+            <p>Registre as avaliações das salas e acompanhe a evolução mensal.</p>
+          </div>
+          <div class="hero-trophy">🏆</div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-icon blue">🏫</span>
+            <div><small>Salas cadastradas</small><strong id="totalSalas">6</strong></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon purple">📝</span>
+            <div><small>Avaliações feitas</small><strong id="totalAvaliacoes">15</strong></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon yellow">🥇</span>
+            <div><small>Sala líder</small><strong id="salaLider">3º D.S</strong></div>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon green">⭐</span>
+            <div><small>Melhor pontuação</small><strong id="melhorPontuacao">95 pts</strong></div>
+          </article>
+        </div>
+
+        <div class="content-grid">
+          <section class="card ranking-card">
+            <div class="card-header">
+              <div>
+                <span class="eyebrow">ACOMPANHAMENTO</span>
+                <h3>Ranking atual</h3>
+              </div>
+              <span class="month-pill">Outubro / 2026</span>
+            </div>
+            <div id="rankingGremio" class="ranking-list"></div>
+          </section>
+
+          <section class="card evaluation-card">
+            <div class="card-header">
+              <div>
+                <span class="eyebrow">ÁREA RESTRITA</span>
+                <h3>Nova avaliação</h3>
+              </div>
+              <span class="lock">🔒 Grêmio</span>
+            </div>
+
+            <form id="evaluationForm">
+              <label>
+                Sala
+                <select id="salaSelect" required></select>
+              </label>
+              <label>
+                Data
+                <input type="date" id="dataAvaliacao" required>
+              </label>
+              <div class="score-label">
+                <span>Pontuação</span>
+                <strong><span id="scoreValue">10</span>/10</strong>
+              </div>
+              <input type="range" id="scoreRange" min="0" max="10" value="10">
+              <div class="criteria">
+                <span>🧹 Limpeza</span>
+                <span>📚 Organização</span>
+                <span>🪑 Conservação</span>
+              </div>
+              <label>
+                Observação
+                <textarea id="observacao" rows="3" placeholder="Ex.: sala muito bem organizada..."></textarea>
+              </label>
+              <button class="primary-btn" type="submit">＋ Registrar avaliação</button>
+            </form>
+            <p class="form-note">Somente usuários com perfil <strong>Grêmio</strong> poderão utilizar esta área após o login.</p>
+          </section>
+        </div>
+      </section>
+
+      <!-- PORTAL DO ALUNO -->
+      <section class="view" id="alunoView">
+        <div class="student-hero">
+          <div>
+            <span class="eyebrow">PORTAL DO ALUNO</span>
+            <h3>Olá, alunos! 👋</h3>
+            <p>Acompanhem o desempenho da turma, o ranking e as conquistas do mês.</p>
+          </div>
+          <div class="student-class">3º D.S</div>
+        </div>
+
+        <div class="student-grid">
+          <section class="card champion-card">
+            <div class="cup">🏆</div>
+            <span>1º lugar no ranking</span>
+            <h3 id="studentLeader">3º D.S</h3>
+            <strong id="studentPoints">95 pontos</strong>
+            <div class="progress"><span id="leaderProgress"></span></div>
+            <small>Continue cuidando da sala! 💙</small>
+          </section>
+
+          <section class="card">
+            <div class="card-header">
+              <div>
+                <span class="eyebrow">DESEMPENHO</span>
+                <h3>Ranking mensal</h3>
+              </div>
+              <span class="month-pill">Outubro</span>
+            </div>
+            <div id="rankingAluno" class="ranking-list"></div>
+          </section>
+
+          <section class="card profile-card">
+            <div class="card-header">
+              <div>
+                <span class="eyebrow">MINHA TURMA</span>
+                <h3>Perfil da sala</h3>
+              </div>
+            </div>
+            <div class="class-photo">👩‍🎓 👨‍🎓 👩‍🎓<br>👨‍🎓 👩‍🎓 👨‍🎓</div>
+            <h3>3º D.S</h3>
+            <p>Turma participante do desafio de organização.</p>
+            <div class="conquests">
+              <span>🏅 Sala Nota 10</span>
+              <span>✨ 100% Limpa</span>
+              <span>🏆 Líder do mês</span>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- RANKING -->
+      <section class="view" id="rankingView">
+        <div class="section-heading">
+          <span class="eyebrow">DESEMPENHO DAS TURMAS</span>
+          <h3>Ranking geral</h3>
+          <p>Os pontos são atualizados somente após uma avaliação registrada pelo Grêmio.</p>
+        </div>
+        <section class="card">
+          <div id="rankingCompleto" class="ranking-list large"></div>
+        </section>
+      </section>
+
+      <!-- REGRAS -->
+      <section class="view" id="regrasView">
+        <div class="section-heading">
+          <span class="eyebrow">COMO FUNCIONA</span>
+          <h3>Regras do projeto</h3>
+          <p>Um sistema simples para incentivar a organização das salas no período da manhã.</p>
+        </div>
+        <div class="rules-grid">
+          <article class="card rule"><span>01</span><h4>O Grêmio avalia</h4><p>Os integrantes do Grêmio realizam as avaliações das salas.</p></article>
+          <article class="card rule"><span>02</span><h4>As salas pontuam</h4><p>Cada avaliação gera uma pontuação de acordo com a organização.</p></article>
+          <article class="card rule"><span>03</span><h4>O ranking atualiza</h4><p>Os pontos acumulados definem a posição de cada turma.</p></article>
+          <article class="card rule"><span>04</span><h4>Todos acompanham</h4><p>Os alunos podem visualizar o ranking, mas não podem alterar avaliações.</p></article>
+        </div>
+      </section>
+
+      <footer>
+        <span>Grêmio Estudantil • Organização das Salas</span>
+        <span>Projeto escolar • 2026</span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
