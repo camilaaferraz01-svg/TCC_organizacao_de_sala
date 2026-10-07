@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel da Sala | Grêmio Estudantil</title>
+
+    <link rel="stylesheet" href="sala.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         SIDEBAR
+    ================================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+
+            <div class="logo-icon">
+                🎓
+            </div>
+
+            <div>
+                <h2>Grêmio</h2>
+                <span>Estudantil</span>
+            </div>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <button class="menu-item active" data-section="inicio">
+                🏠
+                <span>Início</span>
+            </button>
+
+
+            <button class="menu-item" data-section="ranking">
+                🏆
+                <span>Ranking</span>
+            </button>
+
+
+            <button class="menu-item" data-section="historico">
+                📋
+                <span>Histórico</span>
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="access-info">
+
+                <span>ACESSO DA SALA</span>
+
+                <strong>
+                    👁 Somente visualização
+                </strong>
+
+            </div>
+
+
+            <button class="logout-btn" id="logoutBtn">
+                🚪 Sair
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================================
+         CONTEÚDO
+    ================================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================================
+             INÍCIO
+        ================================= -->
+
+        <section id="inicioSection" class="page-section active-section">
+
+
+            <!-- TOPO -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <span class="welcome">
+                        PAINEL DA SALA
+                    </span>
+
+                    <h1>
+                        Olá, <span id="nomeSala">Sala</span>! 👋
+                    </h1>
+
+                    <p>
+                        Acompanhe o desempenho da sua sala.
+                    </p>
+
+                </div>
+
+
+                <div class="user-info">
+
+                    <div class="user-avatar">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <strong id="usuarioSala">
+                            3ds
+                        </strong>
+
+                        <span>
+                            Sala / Aluno
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ================================
+                 CARDS
+            ================================= -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        ⭐
+                    </div>
+
+                    <div>
+
+                        <span>
+                            PONTUAÇÃO
+                        </span>
+
+                        <strong>
+                            85
+                        </strong>
+
+                        <small>
+                            pontos
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon yellow">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <span>
+                            POSIÇÃO
+                        </span>
+
+                        <strong>
+                            2º
+                        </strong>
+
+                        <small>
+                            lugar
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <span>
+                            EVOLUÇÃO
+                        </span>
+
+                        <strong>
+                            +15
+                        </strong>
+
+                        <small>
+                            este mês
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <span>
+                            AVALIAÇÕES
+                        </span>
+
+                        <strong>
+                            6
+                        </strong>
+
+                        <small>
+                            realizadas
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================================
+                 RANKING + AVALIAÇÃO
+            ================================= -->
+
+            <section class="content-grid">
+
+
+                <!-- RANKING RESUMIDO -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                COMPETIÇÃO
+                            </span>
+
+                            <h2>
+                                Ranking das salas
+                            </h2>
+
+                        </div>
+
+                        <span class="month">
+                            Outubro 2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="ranking">
+
+
+                        <div class="ranking-item first">
+
+                            <div class="position">
+                                1
+                            </div>
+
+                            <div class="class-info">
+
+                                <strong>
+                                    3º A
+                                </strong>
+
+                                <span>
+                                    🥇 Primeiro lugar
+                                </span>
+
+                            </div>
+
+                            <strong class="points">
+                                92 pts
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="ranking-item second">
+
+                            <div class="position">
+                                2
+                            </div>
+
+                            <div class="class-info">
+
+                                <strong>
+                                    3º D.S
+                                </strong>
+
+                                <span>
+                                    Sua sala
+                                </span>
+
+                            </div>
+
+                            <strong class="points">
+                                85 pts
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="ranking-item third">
+
+                            <div class="position">
+                                3
+                            </div>
+
+                            <div class="class-info">
+
+                                <strong>
+                                    2º B
+                                </strong>
+
+                                <span>
+                                    Terceiro lugar
+                                </span>
+
+                            </div>
+
+                            <strong class="points">
+                                78 pts
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="ranking-item">
+
+                            <div class="position">
+                                4
+                            </div>
+
+                            <div class="class-info">
+
+                                <strong>
+                                    2º D.S
+                                </strong>
+
+                                <span>
+                                    Quarto lugar
+                                </span>
+
+                            </div>
+
+                            <strong class="points">
+                                72 pts
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="view-more-btn" data-open="ranking">
+                        Ver ranking completo →
+                    </button>
+
+                </div>
+
+
+
+                <!-- ÚLTIMA AVALIAÇÃO -->
+
+                <div class="panel evaluation">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                ÚLTIMA AVALIAÇÃO
+                            </span>
+
+                            <h2>
+                                Resultado
+                            </h2>
+
+                        </div>
+
+                        <span class="date">
+                            06/10/2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="score-circle">
+
+                        <strong>
+                            85
+                        </strong>
+
+                        <span>
+                            pontos
+                        </span>
+
+                    </div>
+
+
+                    <div class="evaluation-status">
+
+                        <span class="status">
+                            ✓ Bom resultado
+                        </span>
+
+                        <p>
+                            Continue mantendo a sala
+                            organizada!
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================================
+                 RANKING + HISTÓRICO
+            ================================= -->
+
+            <section class="dashboard-sections">
+
+
+                <!-- RANKING -->
+
+                <div class="panel compact-panel">
+
+                    <span class="section-label">
+                        RANKING COMPLETO
+                    </span>
+
+                    <h2>
+                        🏆 Ranking das salas
+                    </h2>
+
+                    <p class="section-description">
+                        Consulte a classificação completa.
+                    </p>
+
+
+                    <div class="full-ranking">
+
+                        <div class="full-ranking-item destaque">
+
+                            <strong>
+                                🥇 1º
+                            </strong>
+
+                            <span>
+                                3º A
+                            </span>
+
+                            <b>
+                                92 pontos
+                            </b>
+
+                        </div>
+
+
+                        <div class="full-ranking-item minha-sala">
+
+                            <strong>
+                                🥈 2º
+                            </strong>
+
+                            <span>
+                                3º D.S — Sua sala
+                            </span>
+
+                            <b>
+                                85 pontos
+                            </b>
+
+                        </div>
+
+
+                        <div class="full-ranking-item">
+
+                            <strong>
+                                🥉 3º
+                            </strong>
+
+                            <span>
+                                2º B
+                            </span>
+
+                            <b>
+                                78 pontos
+                            </b>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="view-more-btn" data-open="ranking">
+                        Abrir ranking completo →
+                    </button>
+
+                </div>
+
+
+
+                <!-- HISTÓRICO -->
+
+                <div class="panel compact-panel">
+
+                    <span class="section-label">
+                        HISTÓRICO
+                    </span>
+
+                    <h2>
+                        📋 Avaliações
+                    </h2>
+
+                    <p class="section-description">
+                        Consulte as avaliações da sua sala.
+                    </p>
+
+
+                    <div class="history-list">
+
+
+                        <div class="history-item">
+
+                            <div>
+
+                                <strong>
+                                    06/10/2026
+                                </strong>
+
+                                <span>
+                                    Excelente
+                                </span>
+
+                            </div>
+
+                            <b>
+                                +15 pts
+                            </b>
+
+                        </div>
+
+
+
+                        <div class="history-item">
+
+                            <div>
+
+                                <strong>
+                                    29/09/2026
+                                </strong>
+
+                                <span>
+                                    Bom
+                                </span>
+
+                            </div>
+
+                            <b>
+                                +14 pts
+                            </b>
+
+                        </div>
+
+
+
+                        <div class="history-item">
+
+                            <div>
+
+                                <strong>
+                                    22/09/2026
+                                </strong>
+
+                                <span>
+                                    Regular
+                                </span>
+
+                            </div>
+
+                            <b>
+                                +12 pts
+                            </b>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="view-more-btn" data-open="historico">
+                        Ver histórico completo →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================================
+                 META
+            ================================= -->
+
+            <section class="goal">
+
+                <div class="goal-icon">
+                    🎯
+                </div>
+
+
+                <div class="goal-info">
+
+                    <span>
+                        META DO MÊS
+                    </span>
+
+                    <h3>
+                        Faltam apenas 15 pontos!
+                    </h3>
+
+                    <p>
+                        Alcance 100 pontos e conquiste
+                        o selo de sala destaque.
+                    </p>
+
+
+                    <div class="progress">
+
+                        <div class="progress-bar"></div>
+
+                    </div>
+
+                </div>
+
+
+                <strong>
+                    85/100
+                </strong>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- ================================
+             RANKING COMPLETO
+        ================================= -->
+
+        <section id="rankingSection" class="page-section">
+
+
+            <header class="page-header">
+
+                <div>
+
+                    <span class="welcome">
+                        COMPETIÇÃO
+                    </span>
+
+                    <h1>
+                        🏆 Ranking completo
+                    </h1>
+
+                    <p>
+                        Confira a classificação das salas por mês.
+                    </p>
+
+                </div>
+
+
+                <button class="back-btn" data-section="inicio">
+                    ← Voltar
+                </button>
+
+            </header>
+
+
+
+            <div class="filter-panel">
+
+                <label for="rankingMonth">
+                    📅 Selecione o mês:
+                </label>
+
+                <select id="rankingMonth">
+
+                    <option value="outubro">
+                        Outubro 2026
+                    </option>
+
+                    <option value="setembro">
+                        Setembro 2026
+                    </option>
+
+                    <option value="agosto">
+                        Agosto 2026
+                    </option>
+
+                    <option value="julho">
+                        Julho 2026
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            CLASSIFICAÇÃO
+                        </span>
+
+                        <h2 id="rankingTitle">
+                            Outubro 2026
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="rankingFullList" class="ranking-full-list">
+                    <!-- preenchido pelo JavaScript -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             HISTÓRICO COMPLETO
+        ================================= -->
+
+        <section id="historicoSection" class="page-section">
+
+
+            <header class="page-header">
+
+                <div>
+
+                    <span class="welcome">
+                        ACOMPANHAMENTO
+                    </span>
+
+                    <h1>
+                        📋 Histórico completo
+                    </h1>
+
+                    <p>
+                        Consulte todas as avaliações da sua sala.
+                    </p>
+
+                </div>
+
+
+                <button class="back-btn" data-section="inicio">
+                    ← Voltar
+                </button>
+
+            </header>
+
+
+
+            <div class="filter-panel">
+
+                <label for="historyMonth">
+                    📅 Selecione o mês:
+                </label>
+
+                <select id="historyMonth">
+
+                    <option value="outubro">
+                        Outubro 2026
+                    </option>
+
+                    <option value="setembro">
+                        Setembro 2026
+                    </option>
+
+                    <option value="agosto">
+                        Agosto 2026
+                    </option>
+
+                    <option value="julho">
+                        Julho 2026
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            AVALIAÇÕES
+                        </span>
+
+                        <h2 id="historyTitle">
+                            Outubro 2026
+                        </h2>
+
+                    </div>
+
+                    <span class="view-only">
+                        🔒 Somente visualização
+                    </span>
+
+                </div>
+
+
+                <div class="history-full">
+
+                    <div class="history-table-header">
+
+                        <span>
+                            Data
+                        </span>
+
+                        <span>
+                            Resultado
+                        </span>
+
+                        <span>
+                            Observação
+                        </span>
+
+                        <span>
+                            Pontos
+                        </span>
+
+                    </div>
+
+
+                    <div id="historyFullList">
+                        <!-- preenchido pelo JavaScript -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="sala.js"></script>
+
+</body>
+
+</html>

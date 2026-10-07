@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Grêmio Estudantil</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <!-- LADO ESQUERDO -->
+        <section class="brand-side">
+
+            <div class="brand-content">
+
+                <div class="logo-mark">
+                    🧹
+                </div>
+
+                <span class="brand-label">
+                    PROJETO ESCOLAR
+                </span>
+
+                <h1>
+                    Grêmio<br>
+                    <strong>Estudantil</strong>
+                </h1>
+
+                <p>
+                    Organização das salas de aula
+                    durante o período da manhã.
+                </p>
+
+                <div class="challenge-card">
+
+                    <div class="challenge-icon">
+                        🏆
+                    </div>
+
+                    <div>
+                        <strong>
+                            Desafio das Salas
+                        </strong>
+
+                        <span>
+                            Organização • Cuidado • Equipe
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LADO DIREITO -->
+        <section class="form-side">
+
+            <div class="login-card">
+
+                <span class="eyebrow">
+                    BEM-VINDO(A)!
+                </span>
+
+                <h2>
+                    Entrar no sistema
+                </h2>
+
+                <p class="subtitle">
+                    Escolha seu tipo de acesso e entre
+                    para acompanhar o projeto.
+                </p>
+
+
+                <!-- TIPO DE USUÁRIO -->
+
+                <div class="access-types">
+
+                    <button
+                        class="access-type active"
+                        type="button"
+                        data-type="sala">
+
+                        <span class="access-icon">
+                            🎓
+                        </span>
+
+                        <span>
+                            <strong>
+                                Sala / Aluno
+                            </strong>
+
+                            <small>
+                                Acompanhar ranking
+                            </small>
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="access-type"
+                        type="button"
+                        data-type="gremio">
+
+                        <span class="access-icon">
+                            🏆
+                        </span>
+
+                        <span>
+                            <strong>
+                                Grêmio
+                            </strong>
+
+                            <small>
+                                Registrar avaliações
+                            </small>
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- FORMULÁRIO -->
+
+                <form id="loginForm">
+
+                    <input
+                        type="hidden"
+                        id="accessType"
+                        value="sala"
+                    >
+
+
+                    <label for="username">
+                        Usuário
+                    </label>
+
+                    <div class="input-group">
+
+                        <span>
+                            👤
+                        </span>
+
+                        <input
+                            id="username"
+                            type="text"
+                            placeholder="Digite o usuário da sala"
+                            required
+                        >
+
+                    </div>
+
+
+                    <label for="password">
+                        Senha
+                    </label>
+
+                    <div class="input-group">
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <input
+                            id="password"
+                            type="password"
+                            placeholder="Digite sua senha"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="passwordToggle">
+
+                            👁️
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-options">
+
+                        <label>
+                            <input type="checkbox">
+                            Lembrar acesso
+                        </label>
+
+                        <button
+                            type="button"
+                            id="forgot">
+
+                            Esqueci minha senha
+
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        class="login-button"
+                        type="submit">
+
+                        <span>
+                            Entrar
+                        </span>
+
+                        <strong>
+                            →
+                        </strong>
+
+                    </button>
+
+                </form>
+
+
+                <!-- INFORMAÇÃO PARA TESTE -->
+
+                <div
+                    class="prototype-info"
+                    id="prototypeInfo">
+
+                    <strong>
+                        🔎 Modo demonstração
+                    </strong>
+
+                    <span>
+                        Usuário: <b>3ds</b>
+                    </span>
+
+                    <span>
+                        Senha: <b>1234</b>
+                    </span>
+
+                </div>
+
+
+                <div class="security-message">
+
+                    🔐
+
+                    <p>
+                        Somente o Grêmio terá permissão
+                        para registrar avaliações.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div
+        class="toast"
+        id="toast">
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
