@@ -14,6 +14,12 @@ const usuarios = {
         usuario: "gremio",
         senha: "1234",
         nome: "Grêmio Estudantil"
+    },
+
+    gestao: {
+        usuario: "gestao",
+        senha: "1234",
+        nome: "Gestão Escolar"
     }
 
 };
@@ -53,41 +59,18 @@ botoes.forEach(botao => {
         tipoUsuario.value = tipo;
 
 
-        if (tipo === "gremio") {
-
-            usuarioInput.placeholder =
-                "Digite o usuário do Grêmio";
-
-            prototypeInfo.innerHTML = `
-                <strong>🔎 Modo demonstração</strong>
-
-                <span>
-                    Usuário: <b>gremio</b>
-                </span>
-
-                <span>
-                    Senha: <b>1234</b>
-                </span>
-            `;
-
-        } else {
-
-            usuarioInput.placeholder =
-                "Digite o usuário da sala";
-
-            prototypeInfo.innerHTML = `
-                <strong>🔎 Modo demonstração</strong>
-
-                <span>
-                    Usuário: <b>3ds</b>
-                </span>
-
-                <span>
-                    Senha: <b>1234</b>
-                </span>
-            `;
-
-        }
+        const exemplos = {
+            sala: ["sala", "3ds"],
+            gremio: ["Grêmio", "gremio"],
+            gestao: ["Gestão", "gestao"]
+        };
+        const [descricao, usuarioDemo] = exemplos[tipo];
+        usuarioInput.placeholder = `Digite o usuário da ${descricao}`;
+        prototypeInfo.innerHTML = `
+            <strong>🔎 Modo demonstração</strong>
+            <span>Usuário: <b>${usuarioDemo}</b></span>
+            <span>Senha: <b>1234</b></span>
+        `;
 
     });
 
@@ -236,10 +219,13 @@ document
                 window.location.href =
                     "sala.html";
 
-            } else {
+            } else if (tipo === "gremio") {
 
-                window.location.href =
-                    "index.html";
+                window.location.href = "gremio.html";
+
+            } else if (tipo === "gestao") {
+
+                window.location.href = "gestao.html";
 
             }
 
