@@ -703,3 +703,7 @@ form > label {
         font-size: 27px;
     }
 }
+/* Terceiro perfil de acesso */
+.access-types { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.access-type { min-width: 0; }
+@media(max-width: 560px) { .access-types { grid-template-columns: 1fr; } }
