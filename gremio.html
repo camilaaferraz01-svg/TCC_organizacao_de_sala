@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel do Grêmio Estudantil</title><link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="brand-logo">GE</div><div><b>Grêmio Estudantil</b><small>Avaliações e acompanhamento</small></div></div>
+  <div class="admin"><div class="admin-icon">🏆</div><div><b>Grêmio Estudantil</b><small>Avaliador</small></div><i></i></div>
+  <p class="nav-label">MENU PRINCIPAL</p>
+  <nav>
+    <button class="nav active" data-page="dashboard">▦ <span>Dashboard</span></button>
+    <button class="nav" data-page="salas">🏫 <span>Salas</span></button>
+    <button class="nav" data-page="ranking">🏆 <span>Ranking</span></button>
+    <button class="nav" data-page="avaliacoes">📝 <span>Avaliações</span></button>
+    <button class="nav" data-page="historico">◷ <span>Histórico</span></button>
+  <button class="nav logout logout-visible" id="logout" type="button">↪ <span>Sair / Voltar ao login</span></button>
+  </nav>
+  <p class="nav-label prefs">PREFERÊNCIAS</p>
+  <div class="sidebar-bottom"><div class="tip"><b>💡 Organização faz a diferença!</b><p>Acompanhe as salas e incentive um ambiente melhor para todos.</p></div></div>
+</aside>
+<main class="main">
+<header class="topbar"><button id="menuToggle" class="menu-toggle">☰</button><div class="crumb">Grêmio Estudantil <span>/</span> <b id="crumbCurrent">Dashboard</b></div><div class="top-right"><span class="demo"><i></i> Modo demonstração</span><div class="avatar">GE</div></div></header>
+<div class="content">
+<section class="page active" id="page-dashboard">
+  <div class="welcome"><div><p class="eyebrow">VISÃO GERAL</p><h1>Olá, Grêmio! 👋</h1><p class="muted">Acompanhe a organização das salas e os resultados do projeto.</p></div><span class="date" id="today">📅 Hoje</span></div>
+  <div class="stats">
+    <article class="stat"><div class="stat-top"><span class="stat-icon blue">🏫</span><small>Cadastradas</small></div><p>Total de salas</p><strong id="totalRooms">4</strong><footer>Salas participantes</footer></article>
+    <article class="stat"><div class="stat-top"><span class="stat-icon purple">📝</span><small>Neste mês</small></div><p>Avaliações realizadas</p><strong id="totalEvaluations">3</strong><footer>Registros demonstrativos</footer></article>
+    <article class="stat"><div class="stat-top"><span class="stat-icon gold">🏆</span><small>Líder atual</small></div><p>1º lugar</p><strong class="leader" id="leader">3º A</strong><footer>Maior pontuação do mês</footer></article>
+    <article class="stat"><div class="stat-top"><span class="stat-icon green">📈</span><small>Média mensal</small></div><p>Média de pontos</p><strong id="average">81,8</strong><footer>Entre as salas participantes</footer></article>
+  </div>
+  <div class="columns"><article class="panel"><div class="panel-head"><div><h2>🏆 Ranking das salas</h2><p class="muted">Destaques do período selecionado</p></div><button class="link" data-go="ranking">Ver ranking completo ↗</button></div><div class="filter"><label for="dashMonth">Período</label><select id="dashMonth"><option value="outubro">Outubro 2026</option><option value="setembro">Setembro 2026</option><option value="agosto">Agosto 2026</option><option value="julho">Julho 2026</option></select></div><div id="dashRanking" class="rank-list"></div></article>
+  <article class="panel"><div class="panel-head"><div><h2>📝 Últimas avaliações</h2><p class="muted">Atividade recente</p></div><button class="link" data-go="historico">Ver todas ↗</button></div><div id="recent"></div><button class="outline wide" data-go="avaliacoes">＋ Registrar avaliação</button></article></div>
+  <article class="panel callout"><div><span class="callout-icon">✨</span><div><h2>Vamos manter tudo em dia?</h2><p class="muted">Registre as avaliações para manter o ranking atualizado.</p></div></div><button class="primary" data-go="avaliacoes">Nova avaliação →</button></article>
+  <p class="notice">ⓘ Prévia visual com dados fictícios. As informações ainda não são salvas no Supabase.</p>
+</section>
+<section class="page" id="page-salas">
+  <div class="page-title"><div><p class="eyebrow">GERENCIAMENTO</p><h1>Salas participantes</h1><p class="muted">Consulte as turmas cadastradas pela Gestão Escolar.</p></div></div>
+  <div class="toolbar"><div class="search">⌕ <input id="roomSearch" placeholder="Buscar sala..." aria-label="Buscar sala"></div><span id="roomCount">4 salas</span></div><div class="rooms-grid" id="roomsGrid"></div>
+  <p class="notice">ⓘ O cadastro nesta versão é demonstrativo e não cria contas reais.</p>
+</section>
+<section class="page" id="page-ranking">
+  <div class="page-title"><div><p class="eyebrow">DESEMPENHO</p><h1>Ranking completo</h1><p class="muted">Compare os resultados das salas por mês.</p></div><div class="month-filter"><label for="rankMonth">Mês</label><select id="rankMonth"><option value="outubro">Outubro 2026</option><option value="setembro">Setembro 2026</option><option value="agosto">Agosto 2026</option><option value="julho">Julho 2026</option></select></div></div>
+  <article class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>Posição</th><th>Sala</th><th>Pontuação</th><th>Desempenho</th><th>Status</th></tr></thead><tbody id="rankTable"></tbody></table></div></article><p class="notice">ⓘ Pontuações de exemplo, que serão substituídas pelos dados reais do Supabase.</p>
+</section>
+<section class="page" id="page-avaliacoes">
+  <div class="page-title"><div><p class="eyebrow">REGISTRO</p><h1>Nova avaliação</h1><p class="muted">Preencha os dados para simular uma avaliação.</p></div></div>
+  <div class="form-layout"><article class="panel form-panel"><div class="panel-head"><div><h2>📝 Dados da avaliação</h2><p class="muted">Preencha os campos obrigatórios.</p></div></div>
+  <form id="evalForm"><div class="field"><label for="evalRoom">Sala *</label><select id="evalRoom" required></select></div><div class="form-row"><div class="field"><label for="evalDate">Data *</label><input type="date" id="evalDate" required></div><div class="field"><label for="evalPoints">Pontuação (0–100) *</label><input type="number" id="evalPoints" min="0" max="100" required placeholder="Ex.: 85"></div></div><div class="field"><label for="evalResult">Resultado *</label><select id="evalResult" required><option value="">Selecione</option><option>Excelente</option><option>Bom</option><option>Regular</option><option>Precisa melhorar</option></select></div><div class="field"><label for="evalNotes">Observações</label><textarea id="evalNotes" rows="4" placeholder="Pontos positivos e o que pode melhorar..."></textarea></div><div class="form-actions"><button type="reset" class="outline">Limpar</button><button class="primary">Salvar demonstração →</button></div></form></article>
+  <aside class="panel criteria"><div class="stat-icon blue">📋</div><h2>Dica para avaliar</h2><p class="muted">Use os mesmos critérios para todas as turmas.</p><div class="criterion"><span>🧹</span><div><b>Limpeza</b><p>Chão, lixeiras e superfícies.</p></div></div><div class="criterion"><span>📚</span><div><b>Organização</b><p>Materiais e carteiras organizados.</p></div></div><div class="criterion"><span>🤝</span><div><b>Colaboração</b><p>Cuidado e participação coletiva.</p></div></div></aside></div><p class="notice">ⓘ O formulário ainda não grava dados permanentemente.</p>
+</section>
+<section class="page" id="page-historico">
+  <div class="page-title"><div><p class="eyebrow">ACOMPANHAMENTO</p><h1>Histórico de avaliações</h1><p class="muted">Consulte os registros por sala e mês.</p></div></div>
+  <div class="filters panel"><div class="field"><label for="historyRoom">Sala</label><select id="historyRoom"><option value="todas">Todas as salas</option></select></div><div class="field"><label for="historyMonth">Mês</label><select id="historyMonth"><option value="todos">Todos os meses</option><option value="outubro">Outubro 2026</option><option value="setembro">Setembro 2026</option><option value="agosto">Agosto 2026</option><option value="julho">Julho 2026</option></select></div></div>
+  <article class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>Data</th><th>Sala</th><th>Resultado</th><th>Pontos</th><th>Observação</th></tr></thead><tbody id="historyTable"></tbody></table></div><div id="emptyHistory" class="empty hidden">Nenhuma avaliação encontrada para esses filtros.</div></article><p class="notice">ⓘ O histórico atual é fictício e serve para validar a interface.</p>
+</section>
+<dialog id="roomDialog"><form id="roomForm"><div class="dialog-head"><div><p class="eyebrow">NOVO CADASTRO</p><h2>Cadastrar sala</h2></div><button type="button" id="closeDialog" class="close">×</button></div><p class="muted">Esta sala ficará apenas nesta demonstração.</p><div class="field"><label for="roomName">Nome da sala *</label><input id="roomName" required maxlength="40" placeholder="Ex.: 3º D.S"></div><div class="field"><label for="roomLogin">Login desejado *</label><input id="roomLogin" required maxlength="30" placeholder="Ex.: 3ds"></div><div class="field"><label for="roomLogo">Logo da sala (opcional)</label><input type="file" id="roomLogo" accept="image/png,image/jpeg,image/webp"><small>Imagem de até 2 MB; não será enviada a um servidor.</small></div><div class="form-actions"><button type="button" class="outline" id="cancelDialog">Cancelar</button><button class="primary">Adicionar sala</button></div></form></dialog>
+<script src="gremio.js"></script>
+</body></html>
