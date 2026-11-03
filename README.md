@@ -1,26 +1,21 @@
-# Grêmio Estudantil — Ranking das Salas
 
-Protótipo em HTML, CSS e JavaScript inspirado na referência enviada.
+# Grêmio Escolar — HTML independente para cada perfil
 
-## Arquivos
-- `index.html` — estrutura das páginas/views
-- `style.css` — visual, responsividade e componentes
-- `script.js` — ranking, avaliações e armazenamento local
+Abra `index.html` ou `login.html` no Live Server do VS Code.
 
-## Como abrir
-1. Abra a pasta no Visual Studio Code.
-2. Abra `index.html` com o Live Server.
-3. Use o menu lateral para alternar entre Painel do Grêmio, Portal do Aluno, Ranking e Regras.
+| Perfil | Usuário | Senha | Página |
+| --- | --- | --- | --- |
+| Sala | `3ds` | `1234` | `sala.html` |
+| Grêmio | `gremio` | `1234` | `gremio.html` |
+| Gestão | `gestao` | `1234` | `gestao.html` |
 
-## Funcionamento atual
-- Ranking de salas.
-- Cadastro de avaliação no modo Grêmio.
-- Pontuação atualizada no protótipo.
-- Dados das avaliações salvos no `localStorage`.
-- Layout responsivo para computador e celular.
+- `index.html`: entrada do site, direciona para `login.html`.
+- `gestao.html` + `gestao.js`: painel próprio da Gestão Escolar, com acesso administrativo geral.
+- `gremio.html` + `gremio.js`: painel próprio do Grêmio, sem cadastro de salas.
+- `sala.html` + `sala.js`: portal da sala.
+- Os botões **Sair / Voltar ao login** estão visíveis nos painéis da Gestão e do Grêmio.
+- O cadastro de salas e as avaliações dos painéis administrativos usam armazenamento demonstrativo compartilhado no navegador.
 
-## Próxima etapa
-Adicionar autenticação:
-- conta do Grêmio: pode cadastrar avaliações;
-- conta de cada sala: pode visualizar o portal/ranking;
-- proteção real de permissões no backend/banco de dados (RLS/roles), e não apenas no JavaScript.
+**Importante:** as credenciais e a sessão são demonstrativas (JavaScript/localStorage).
+Para utilização real, implementar autenticação e autorização com Supabase Auth e RLS.
+O Portal das Salas ainda usa dados demonstrativos próprios, sem sincronização com os painéis administrativos.
