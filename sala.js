@@ -14,9 +14,9 @@ if (!sessao) {
 }
 
 
-if (sessao.tipo !== "sala") {
+if (!["sala", "gestao"].includes(sessao.tipo)) {
 
-    window.location.href = "index.html";
+    window.location.href = "gestao.html";
 
 }
 
@@ -674,4 +674,14 @@ if (logoutBtn) {
 
     });
 
+}
+
+// Gestão pode alternar entre os dois painéis.
+if (sessao && sessao.tipo === "gestao") {
+    const voltarGestao = document.createElement("button");
+    voltarGestao.type = "button";
+    voltarGestao.textContent = "🔐 Voltar à Gestão";
+    voltarGestao.style.cssText = "position:fixed;right:16px;bottom:16px;z-index:9999;padding:12px 16px;border:0;border-radius:12px;background:#2864e8;color:white;font-weight:700;cursor:pointer;box-shadow:0 4px 16px #0002";
+    voltarGestao.addEventListener("click", () => window.location.href = "gestao.html");
+    document.body.appendChild(voltarGestao);
 }
