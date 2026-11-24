@@ -860,7 +860,7 @@ body {
 
 
 .progress-bar {
-    width: 85%;
+    width: 0%;
 
     height: 100%;
 
@@ -1221,3 +1221,32 @@ body {
     }
 
 }
+
+/* IDENTIDADE VISUAL — E.E. PROFESSOR JOÃO CAMARGO */
+:root{--orange:#f47721;--black:#171717}
+body{background:#f4f4f4;color:#202020}
+.sidebar{background:linear-gradient(180deg,#111,#262626);color:#fff}
+.logo-icon{background:linear-gradient(145deg,#ff963d,#e96510);color:#171717}
+.menu-item{color:#dedede}
+.menu-item:hover{background:#39291f;color:#ff9a3d}
+.menu-item.active{background:#f47721;color:#171717}
+.access-info{background:#30241d}
+.logout-btn{border-color:#f4772180;color:#fff}
+.logout-btn:hover{background:#f47721;color:#171717}
+.welcome,.section-label{color:#e96510}
+.user-avatar,.stat-icon.blue{background:#ffe7d5;color:#a94708}
+button{accent-color:#f47721}
+
+
+/* REFINAMENTO VISUAL — IDENTIDADE JOÃO CAMARGO */
+:root{--orange:#f47721;--black:#151515}
+body{background:#f5f4f2;color:#191919}
+.sidebar{background:linear-gradient(180deg,#111,#242424);box-shadow:10px 0 30px #00000012}
+.logo-icon{background:#fff;border:2px solid var(--orange);color:#111}
+.menu-item.active{background:linear-gradient(100deg,#f47721,#ff9844);color:#171717}
+.access-info{display:none!important}
+.logout-btn{border-radius:12px}
+
+.logo-icon img{width:100%;height:100%;object-fit:contain;display:block}
+
+.empty-state{padding:18px 12px;text-align:center;color:#8b817a;font-size:13px;line-height:1.6;background:#fff8f2;border:1px dashed #edc6a8;border-radius:12px}

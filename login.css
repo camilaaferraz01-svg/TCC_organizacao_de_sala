@@ -58,9 +58,9 @@ input {
     background:
         linear-gradient(
             145deg,
-            #052653,
-            #0757a9,
-            #06366f
+            #ab5001,
+            #ffa602,
+            #000000
         );
 }
 
@@ -177,7 +177,7 @@ input {
 
 .challenge-card span {
 
-    color: #bcdcff;
+    color: #ffe1bc;
 
     font-size: 10px;
 }
@@ -707,3 +707,48 @@ form > label {
 .access-types { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .access-type { min-width: 0; }
 @media(max-width: 560px) { .access-types { grid-template-columns: 1fr; } }
+
+
+/* IDENTIDADE VISUAL — E.E. PROFESSOR JOÃO CAMARGO */
+body{background:#111;color:#191919}
+.brand-side{background:linear-gradient(145deg,#101010,#292929 65%,#3a2113)}
+.logo-mark{background:linear-gradient(145deg,#ff963d,#e96510);color:#171717;box-shadow:0 18px 40px #0008}
+.brand-label{color:#ffb477}
+.brand-content p{color:#e0d1c6}
+.challenge-card{background:#ffffff12;border-color:#ffffff26}
+.challenge-card span{color:#e6c4a8}
+.form-side{background:linear-gradient(135deg,#f5f5f5,#ececec)}
+.login-card{border-color:#e5d5c9;box-shadow:0 25px 70px #0002}
+.eyebrow{color:#d95e0b}
+.access-type.active{border-color:#f47721;background:#fff1e6}
+.login-button{background:linear-gradient(100deg,#e96510,#ff963d);color:#171717}
+
+
+/* IDENTIDADE MODERNA — E.E. PROFESSOR JOÃO CAMARGO */
+:root{--jc-orange:#f47721;--jc-black:#111;--jc-cream:#fff8f2}
+body{background:#f5f5f5;color:#171717}
+.login-page{grid-template-columns:minmax(360px,46%) minmax(0,54%);background:#f7f7f7}
+.brand-side{background:radial-gradient(circle at 78% 18%,#4a2b18 0,transparent 35%),linear-gradient(145deg,#101010 0%,#202020 58%,#3a2113 100%);position:relative;overflow:hidden}
+.brand-side:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #f4772140;border-radius:50%;right:-180px;bottom:-190px;box-shadow:0 0 0 35px #f4772110,0 0 0 75px #f477210a;pointer-events:none}
+.brand-content{position:relative;z-index:1}
+.logo-mark{width:132px;height:132px;padding:9px;background:#fff;border:3px solid var(--jc-orange);border-radius:30px;box-shadow:0 18px 50px #0008;overflow:hidden}
+.logo-mark img{width:100%;height:100%;object-fit:contain;display:block}
+.brand-label{color:#ffb477;letter-spacing:2.2px}
+.brand-content h1{color:#fff;font-size:clamp(42px,5vw,62px);letter-spacing:-1.8px}
+.brand-content h1 strong{color:#ff8735}
+.brand-content p{color:#e0d8d2;max-width:410px}
+.challenge-card{background:#ffffff0d;border:1px solid #ffffff22;backdrop-filter:blur(12px);border-radius:18px}
+.form-side{background:radial-gradient(circle at 100% 0,#ffead9 0,transparent 34%),linear-gradient(135deg,#fff,#f4f4f4)}
+.login-card{border:1px solid #ece3dc;border-radius:24px;box-shadow:0 24px 70px #21160e12}
+.eyebrow{color:#d85e0b}
+.access-types{grid-template-columns:1fr 1fr}
+.access-type{border-color:#e8e1db;background:#faf8f6;color:#171717;transition:.2s}
+.access-type:hover{border-color:#f0a36d;transform:translateY(-1px)}
+.access-type.active{border-color:#f47721;background:#fff2e8;box-shadow:0 0 0 3px #f4772118}
+.access-icon{background:#ffead9;color:#a84608}
+.input-group{border-color:#e7ded7;background:#fff}
+.input-group:focus-within{border-color:#f47721;box-shadow:0 0 0 3px #f4772118}
+.input-group input{color:#171717}
+.login-button{border-radius:13px;box-shadow:0 10px 22px #f4772130}
+.prototype-info{background:#fff8f2;border-color:#f4d5bd;color:#75401f}
+@media(max-width:900px){.login-page{grid-template-columns:1fr}.brand-side{min-height:auto;padding:35px 28px}.brand-content{width:620px}.brand-content h1{font-size:42px}.brand-content p{font-size:14px}.challenge-card{margin-top:22px}.form-side{min-height:auto;padding:28px 18px}.logo-mark{width:92px;height:92px;border-radius:22px}}

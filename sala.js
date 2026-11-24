@@ -44,162 +44,94 @@ if (usuarioSala) {
 ========================================= */
 
 const rankingData = {
-
-    outubro: {
-
-        titulo: "Outubro 2026",
-
-        salas: [
-
-            {
-                posicao: 1,
-                sala: "3º A",
-                observacao: "🥇 Primeiro lugar",
-                pontos: 92
-            },
-
-            {
-                posicao: 2,
-                sala: "3º D.S",
-                observacao: "Sua sala",
-                pontos: 85
-            },
-
-            {
-                posicao: 3,
-                sala: "2º B",
-                observacao: "Terceiro lugar",
-                pontos: 78
-            },
-
-            {
-                posicao: 4,
-                sala: "2º D.S",
-                observacao: "Quarto lugar",
-                pontos: 72
-            }
-
-        ]
-
-    },
-
-
-    setembro: {
-
-        titulo: "Setembro 2026",
-
-        salas: [
-
-            {
-                posicao: 1,
-                sala: "3º D.S",
-                observacao: "Sua sala",
-                pontos: 80
-            },
-
-            {
-                posicao: 2,
-                sala: "3º A",
-                observacao: "Segundo lugar",
-                pontos: 77
-            },
-
-            {
-                posicao: 3,
-                sala: "2º B",
-                observacao: "Terceiro lugar",
-                pontos: 71
-            },
-
-            {
-                posicao: 4,
-                sala: "2º D.S",
-                observacao: "Quarto lugar",
-                pontos: 68
-            }
-
-        ]
-
-    },
-
-
-    agosto: {
-
-        titulo: "Agosto 2026",
-
-        salas: [
-
-            {
-                posicao: 1,
-                sala: "3º A",
-                observacao: "🥇 Primeiro lugar",
-                pontos: 88
-            },
-
-            {
-                posicao: 2,
-                sala: "2º B",
-                observacao: "Segundo lugar",
-                pontos: 82
-            },
-
-            {
-                posicao: 3,
-                sala: "3º D.S",
-                observacao: "Sua sala",
-                pontos: 76
-            },
-
-            {
-                posicao: 4,
-                sala: "2º D.S",
-                observacao: "Quarto lugar",
-                pontos: 69
-            }
-
-        ]
-
-    },
-
-
-    julho: {
-
-        titulo: "Julho 2026",
-
-        salas: [
-
-            {
-                posicao: 1,
-                sala: "2º B",
-                observacao: "🥇 Primeiro lugar",
-                pontos: 84
-            },
-
-            {
-                posicao: 2,
-                sala: "3º A",
-                observacao: "Segundo lugar",
-                pontos: 80
-            },
-
-            {
-                posicao: 3,
-                sala: "3º D.S",
-                observacao: "Sua sala",
-                pontos: 75
-            },
-
-            {
-                posicao: 4,
-                sala: "2º D.S",
-                observacao: "Quarto lugar",
-                pontos: 65
-            }
-
-        ]
-
-    }
-
+    outubro: { titulo: "Outubro 2026", salas: [
+            { posicao: 1, sala: '9º A', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 2, sala: '9º B', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 3, sala: '1º A', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 4, sala: '1º B', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 5, sala: '1º C', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 6, sala: '1º D', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 7, sala: '1º E', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 8, sala: '1º F', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 9, sala: '1º G', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 10, sala: '1º H', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 11, sala: '1º I', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 12, sala: '2º D.S', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 13, sala: '2º LOG', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 14, sala: '2º ADM', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 15, sala: '2º E', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 16, sala: '2º F', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 17, sala: '3º D.S', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 18, sala: '3º LOG', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 19, sala: '3º ADM', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 20, sala: '3º A', observacao: "Sem avaliações", pontos: 0 }
+        ] },
+    setembro: { titulo: "Setembro 2026", salas: [
+            { posicao: 1, sala: '9º A', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 2, sala: '9º B', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 3, sala: '1º A', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 4, sala: '1º B', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 5, sala: '1º C', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 6, sala: '1º D', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 7, sala: '1º E', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 8, sala: '1º F', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 9, sala: '1º G', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 10, sala: '1º H', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 11, sala: '1º I', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 12, sala: '2º D.S', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 13, sala: '2º LOG', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 14, sala: '2º ADM', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 15, sala: '2º E', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 16, sala: '2º F', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 17, sala: '3º D.S', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 18, sala: '3º LOG', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 19, sala: '3º ADM', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 20, sala: '3º A', observacao: "Sem avaliações", pontos: 0 }
+        ] },
+    agosto: { titulo: "Agosto 2026", salas: [
+            { posicao: 1, sala: '9º A', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 2, sala: '9º B', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 3, sala: '1º A', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 4, sala: '1º B', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 5, sala: '1º C', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 6, sala: '1º D', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 7, sala: '1º E', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 8, sala: '1º F', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 9, sala: '1º G', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 10, sala: '1º H', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 11, sala: '1º I', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 12, sala: '2º D.S', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 13, sala: '2º LOG', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 14, sala: '2º ADM', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 15, sala: '2º E', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 16, sala: '2º F', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 17, sala: '3º D.S', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 18, sala: '3º LOG', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 19, sala: '3º ADM', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 20, sala: '3º A', observacao: "Sem avaliações", pontos: 0 }
+        ] },
+    julho: { titulo: "Julho 2026", salas: [
+            { posicao: 1, sala: '9º A', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 2, sala: '9º B', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 3, sala: '1º A', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 4, sala: '1º B', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 5, sala: '1º C', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 6, sala: '1º D', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 7, sala: '1º E', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 8, sala: '1º F', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 9, sala: '1º G', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 10, sala: '1º H', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 11, sala: '1º I', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 12, sala: '2º D.S', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 13, sala: '2º LOG', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 14, sala: '2º ADM', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 15, sala: '2º E', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 16, sala: '2º F', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 17, sala: '3º D.S', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 18, sala: '3º LOG', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 19, sala: '3º ADM', observacao: "Sem avaliações", pontos: 0 },
+            { posicao: 20, sala: '3º A', observacao: "Sem avaliações", pontos: 0 }
+        ] }
 };
 
 
@@ -208,134 +140,10 @@ const rankingData = {
 ========================================= */
 
 const historicoData = {
-
-    outubro: {
-
-        titulo: "Outubro 2026",
-
-        avaliacoes: [
-
-            {
-                data: "06/10/2026",
-                resultado: "Excelente",
-                observacao: "Sala bem organizada.",
-                pontos: "+15"
-            },
-
-            {
-                data: "29/09/2026",
-                resultado: "Bom",
-                observacao: "Pequenos ajustes necessários.",
-                pontos: "+14"
-            },
-
-            {
-                data: "22/09/2026",
-                resultado: "Regular",
-                observacao: "Melhorar a organização das carteiras.",
-                pontos: "+12"
-            }
-
-        ]
-
-    },
-
-
-    setembro: {
-
-        titulo: "Setembro 2026",
-
-        avaliacoes: [
-
-            {
-                data: "25/09/2026",
-                resultado: "Excelente",
-                observacao: "Sala organizada e limpa.",
-                pontos: "+15"
-            },
-
-            {
-                data: "18/09/2026",
-                resultado: "Bom",
-                observacao: "Pequenos ajustes necessários.",
-                pontos: "+13"
-            },
-
-            {
-                data: "11/09/2026",
-                resultado: "Excelente",
-                observacao: "Ótima organização.",
-                pontos: "+15"
-            }
-
-        ]
-
-    },
-
-
-    agosto: {
-
-        titulo: "Agosto 2026",
-
-        avaliacoes: [
-
-            {
-                data: "28/08/2026",
-                resultado: "Bom",
-                observacao: "Sala organizada.",
-                pontos: "+14"
-            },
-
-            {
-                data: "21/08/2026",
-                resultado: "Regular",
-                observacao: "Melhorar organização das carteiras.",
-                pontos: "+11"
-            },
-
-            {
-                data: "14/08/2026",
-                resultado: "Bom",
-                observacao: "Bom desempenho da turma.",
-                pontos: "+13"
-            }
-
-        ]
-
-    },
-
-
-    julho: {
-
-        titulo: "Julho 2026",
-
-        avaliacoes: [
-
-            {
-                data: "24/07/2026",
-                resultado: "Bom",
-                observacao: "Organização satisfatória.",
-                pontos: "+13"
-            },
-
-            {
-                data: "17/07/2026",
-                resultado: "Regular",
-                observacao: "Necessário melhorar a organização.",
-                pontos: "+10"
-            },
-
-            {
-                data: "10/07/2026",
-                resultado: "Bom",
-                observacao: "Sala em boas condições.",
-                pontos: "+12"
-            }
-
-        ]
-
-    }
-
+    outubro: { titulo: "Outubro 2026", avaliacoes: [] },
+    setembro: { titulo: "Setembro 2026", avaliacoes: [] },
+    agosto: { titulo: "Agosto 2026", avaliacoes: [] },
+    julho: { titulo: "Julho 2026", avaliacoes: [] }
 };
 
 

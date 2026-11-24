@@ -16,29 +16,38 @@ if (sessaoGremio.tipo !== ROLE_PERMITIDA) {
 }
 
 // Protótipo visual do painel do Grêmio. Os dados ainda são fictícios.
-const rooms = [
- {id:1,name:"3º A",login:"3a",points:92,logo:""},
- {id:2,name:"3º D.S",login:"3ds",points:85,logo:""},
- {id:3,name:"2º B",login:"2b",points:78,logo:""},
- {id:4,name:"2º D.S",login:"2ds",points:72,logo:""}
+const salasIniciais = [
+  {id:"inicial-1", name:"9º A", login:"9a", points:0, logo:""},
+  {id:"inicial-2", name:"9º B", login:"9b", points:0, logo:""},
+  {id:"inicial-3", name:"1º A", login:"1a", points:0, logo:""},
+  {id:"inicial-4", name:"1º B", login:"1b", points:0, logo:""},
+  {id:"inicial-5", name:"1º C", login:"1c", points:0, logo:""},
+  {id:"inicial-6", name:"1º D", login:"1d", points:0, logo:""},
+  {id:"inicial-7", name:"1º E", login:"1e", points:0, logo:""},
+  {id:"inicial-8", name:"1º F", login:"1f", points:0, logo:""},
+  {id:"inicial-9", name:"1º G", login:"1g", points:0, logo:""},
+  {id:"inicial-10", name:"1º H", login:"1h", points:0, logo:""},
+  {id:"inicial-11", name:"1º I", login:"1i", points:0, logo:""},
+  {id:"inicial-12", name:"2º D.S", login:"2ds", points:0, logo:""},
+  {id:"inicial-13", name:"2º LOG", login:"2log", points:0, logo:""},
+  {id:"inicial-14", name:"2º ADM", login:"2adm", points:0, logo:""},
+  {id:"inicial-15", name:"2º E", login:"2e", points:0, logo:""},
+  {id:"inicial-16", name:"2º F", login:"2f", points:0, logo:""},
+  {id:"inicial-17", name:"3º D.S", login:"3ds", points:0, logo:""},
+  {id:"inicial-18", name:"3º LOG", login:"3log", points:0, logo:""},
+  {id:"inicial-19", name:"3º ADM", login:"3adm", points:0, logo:""},
+  {id:"inicial-20", name:"3º A", login:"3a", points:0, logo:""}
 ];
+const rooms = [...salasIniciais];
 const rankings = {
- outubro:[["3º A",92],["3º D.S",85],["2º B",78],["2º D.S",72]],
- setembro:[["3º D.S",80],["3º A",77],["2º B",71],["2º D.S",68]],
- agosto:[["3º A",88],["2º B",82],["3º D.S",76],["2º D.S",69]],
- julho:[["2º B",84],["3º A",80],["3º D.S",75],["2º D.S",65]]
+  outubro: salasIniciais.map(r => [r.name, 0]),
+  setembro: salasIniciais.map(r => [r.name, 0]),
+  agosto: salasIniciais.map(r => [r.name, 0]),
+  julho: salasIniciais.map(r => [r.name, 0])
 };
-let evaluations = [
- {date:"2026-10-06",room:"3º A",result:"Excelente",points:92,notes:"Sala limpa e carteiras organizadas.",month:"outubro"},
- {date:"2026-10-05",room:"3º D.S",result:"Bom",points:85,notes:"Boa organização geral.",month:"outubro"},
- {date:"2026-10-03",room:"2º B",result:"Bom",points:78,notes:"Melhorar a organização dos materiais.",month:"outubro"},
- {date:"2026-09-28",room:"3º D.S",result:"Bom",points:80,notes:"Melhora na limpeza.",month:"setembro"},
- {date:"2026-09-20",room:"3º A",result:"Bom",points:77,notes:"Manter os bons hábitos.",month:"setembro"},
- {date:"2026-08-18",room:"3º A",result:"Excelente",points:88,notes:"Ótimo resultado.",month:"agosto"},
- {date:"2026-07-21",room:"2º B",result:"Bom",points:84,notes:"Bom cuidado com o espaço.",month:"julho"}
-];
+let evaluations = [];
 const isGestao = ROLE_PERMITIDA === "gestao";
-const STORAGE_DADOS = "gremioEscolarDadosV3";
+const STORAGE_DADOS = "gremioEscolarDadosV4";
 function salvarDados(){
   try { localStorage.setItem(STORAGE_DADOS, JSON.stringify({rooms, rankings, evaluations})); }
   catch(error){ console.warn("Não foi possível salvar dados demonstrativos.",error); }
@@ -50,6 +59,16 @@ try {
     for(const mes of Object.keys(rankings)) delete rankings[mes];
     Object.assign(rankings,dados.rankings);
     evaluations = dados.evaluations;
+    for (const salaInicial of salasIniciais) {
+      if (!rooms.some(r => r.name === salaInicial.name)) rooms.push({...salaInicial});
+    }
+    for (const mes of ["outubro","setembro","agosto","julho"]) {
+      const atuais = rankings[mes] || [];
+      for (const sala of rooms) {
+        if (!atuais.some(item => item[0] === sala.name)) atuais.push([sala.name, 0]);
+      }
+      rankings[mes] = atuais.filter(item => rooms.some(r => r.name === item[0]));
+    }
   }
 } catch(error){ console.warn("Dados demonstrativos inválidos; usando dados iniciais.",error); }
 const $ = s => document.querySelector(s);
@@ -70,12 +89,12 @@ $("#logout").addEventListener("click",()=>{
   window.location.replace("login.html");
 });
 function drawDashRanking(month){let list=[...(rankings[month]||rankings.outubro)].sort((a,b)=>b[1]-a[1]);$("#dashRanking").innerHTML=list.map(([name,points],i)=>`<div class="rank-row"><span class="rank-number ${i===0?"first":""}">${i+1}</span><div class="rank-room">${logo(room(name))}<b>${safe(name)}</b></div><div class="track"><span style="width:${points}%"></span></div><span class="points">${points}</span></div>`).join("");}
-function drawRanking(month){let list=[...(rankings[month]||rankings.outubro)].sort((a,b)=>b[1]-a[1]);$("#rankTable").innerHTML=list.map(([name,points],i)=>`<tr><td><span class="position ${i===0?"first":""}">${i+1}º</span></td><td><div class="table-room">${logo(room(name))}${safe(name)}</div></td><td><b class="table-points">${points} pts</b></td><td><div class="table-track"><span style="width:${points}%"></span></div></td><td><span class="badge">${i===0?"Líder do mês":"Participando"}</span></td></tr>`).join("");}
+function drawRanking(month){let list=[...(rankings[month]||rankings.outubro)].sort((a,b)=>b[1]-a[1]);$("#rankTable").innerHTML=list.map(([name,points],i)=>`<tr><td><span class="position ${i===0?"first":""}">${i+1}º</span></td><td><div class="table-room">${logo(room(name))}${safe(name)}</div></td><td><b class="table-points">${points} pts</b></td><td><div class="table-track"><span style="width:${points}%"></span></div></td><td><span class="badge">${i===0 && points>0?"Líder do mês":"Participando"}</span></td></tr>`).join("");}
 function drawRecent(){$("#recent").innerHTML=[...evaluations].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,4).map(e=>`<div class="recent-item"><span class="recent-icon">📝</span><div class="recent-copy"><b>${safe(e.room)} · ${safe(e.result)}</b><p>${dateText(e.date)} · ${safe(e.notes||"Sem observações")}</p></div><span class="recent-points">+${e.points}</span></div>`).join("");}
 function drawRooms(query=""){let list=rooms.filter(r=>(r.name+" "+r.login).toLowerCase().includes(query.toLowerCase()));$("#roomCount").textContent=`${list.length} ${list.length===1?"sala":"salas"}`;$("#roomsGrid").innerHTML=list.length?list.map(r=>`<article class="room-card"><div class="room-top">${logo(r)}<div><h3>${safe(r.name)}</h3><small>Login demonstrativo: ${safe(r.login)}</small></div></div><div class="room-score"><span>Pontuação de outubro</span><b>${r.points}<small style="font-size:10px;color:#8c98ab;font-weight:500">/100</small></b></div><div class="room-foot"><span class="badge">Participante</span><button class="mini-link" data-detail="${r.id}">Ver detalhes ↗</button></div></article>`).join(""):`<div class="empty">Nenhuma sala encontrada.</div>`;$$("[data-detail]").forEach(b=>b.addEventListener("click",()=>{let r=rooms.find(x=>x.id===Number(b.dataset.detail));toast(`${r.name}: ${r.points} pontos. Login real será criado no Supabase.`);}));refreshSelects();}
 function refreshSelects(){let ev=$("#evalRoom"),hist=$("#historyRoom"),evValue=ev.value,histValue=hist.value;ev.innerHTML='<option value="">Selecione uma sala</option>'+rooms.map(r=>`<option>${safe(r.name)}</option>`).join("");hist.innerHTML='<option value="todas">Todas as salas</option>'+rooms.map(r=>`<option>${safe(r.name)}</option>`).join("");if(rooms.some(r=>r.name===evValue))ev.value=evValue;if(rooms.some(r=>r.name===histValue))hist.value=histValue;}
 function drawHistory(){let rf=$("#historyRoom").value,mf=$("#historyMonth").value;let list=evaluations.filter(e=>(rf==="todas"||e.room===rf)&&(mf==="todos"||e.month===mf)).sort((a,b)=>b.date.localeCompare(a.date));$("#historyTable").innerHTML=list.map(e=>`<tr><td>${dateText(e.date)}</td><td><div class="table-room">${logo(room(e.room))}${safe(e.room)}</div></td><td>${safe(e.result)}</td><td><b class="table-points">${e.points} pts</b></td><td>${safe(e.notes||"—")}</td></tr>`).join("");$("#emptyHistory").classList.toggle("hidden",list.length>0);}
-function updateStats(month="outubro"){let list=rankings[month]||rankings.outubro;let sorted=[...list].sort((a,b)=>b[1]-a[1]);$("#totalRooms").textContent=rooms.length;$("#totalEvaluations").textContent=evaluations.filter(e=>e.month===month).length;$("#leader").textContent=sorted[0]?.[0]||"—";$("#average").textContent=(list.reduce((s,x)=>s+x[1],0)/list.length).toLocaleString("pt-BR",{maximumFractionDigits:1});}
+function updateStats(month="outubro"){let list=rankings[month]||rankings.outubro;let sorted=[...list].sort((a,b)=>b[1]-a[1]);$("#totalRooms").textContent=rooms.length;$("#totalEvaluations").textContent=evaluations.filter(e=>e.month===month).length;$("#leader").textContent=(sorted[0]?.[1]||0)>0?sorted[0][0]:"—";$("#average").textContent=(list.reduce((s,x)=>s+x[1],0)/list.length).toLocaleString("pt-BR",{maximumFractionDigits:1});}
 $("#dashMonth").addEventListener("change",e=>{drawDashRanking(e.target.value);updateStats(e.target.value);});
 $("#rankMonth").addEventListener("change",e=>drawRanking(e.target.value));
 $("#historyRoom").addEventListener("change",drawHistory);$("#historyMonth").addEventListener("change",drawHistory);

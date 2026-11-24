@@ -7,9 +7,8 @@
 </head>
 <body>
 <aside class="sidebar" id="sidebar">
-  <div class="brand"><div class="brand-logo">GE</div><div><b>Gestão Escolar</b><small>Administração geral</small></div></div>
-  <div class="admin"><div class="admin-icon">🏆</div><div><b>Gestão Escolar</b><small>Administrador geral</small></div><i></i></div>
-  <p class="nav-label">MENU PRINCIPAL</p>
+  <div class="brand"><div class="brand-logo" aria-label="Águia João Camargo"><img src="aguia-joao-camargo.png" alt="Brasão da águia"></div><div><b>Gestão Escolar</b><small>E.E. Professor João Camargo</small></div></div>
+<p class="nav-label">MENU PRINCIPAL</p>
   <nav>
     <button class="nav active" data-page="dashboard">▦ <span>Dashboard</span></button>
     <button class="nav" data-page="salas">🏫 <span>Salas</span></button>
@@ -35,7 +34,7 @@
   <div class="columns"><article class="panel"><div class="panel-head"><div><h2>🏆 Ranking das salas</h2><p class="muted">Destaques do período selecionado</p></div><button class="link" data-go="ranking">Ver ranking completo ↗</button></div><div class="filter"><label for="dashMonth">Período</label><select id="dashMonth"><option value="outubro">Outubro 2026</option><option value="setembro">Setembro 2026</option><option value="agosto">Agosto 2026</option><option value="julho">Julho 2026</option></select></div><div id="dashRanking" class="rank-list"></div></article>
   <article class="panel"><div class="panel-head"><div><h2>📝 Últimas avaliações</h2><p class="muted">Atividade recente</p></div><button class="link" data-go="historico">Ver todas ↗</button></div><div id="recent"></div><button class="outline wide" data-go="avaliacoes">＋ Registrar avaliação</button></article></div>
   <article class="panel callout"><div><span class="callout-icon">✨</span><div><h2>Vamos manter tudo em dia?</h2><p class="muted">Registre as avaliações para manter o ranking atualizado.</p></div></div><button class="primary" data-go="avaliacoes">Nova avaliação →</button></article>
-  <p class="notice">ⓘ Prévia visual com dados fictícios. As informações ainda não são salvas no Supabase.</p>
+  <p class="notice">ⓘ Prévia visual: os dados ainda não estão conectados ao banco de dados.</p>
 </section>
 <section class="page" id="page-salas">
   <div class="page-title"><div><p class="eyebrow">GERENCIAMENTO</p><h1>Salas participantes</h1><p class="muted">Visualize as turmas e prepare o cadastro de cada uma.</p></div><button class="primary" id="newRoom">＋ Cadastrar sala</button></div>
@@ -69,7 +68,7 @@
 </section>
 <section class="page" id="page-configuracoes">
   <div class="page-title"><div><p class="eyebrow">PERSONALIZAÇÃO</p><h1>Configurações</h1><p class="muted">Prévia das informações que poderão ser personalizadas.</p></div></div>
-  <article class="panel settings"><div class="settings-brand"><div class="brand-logo big">GE</div><div><h2>Grêmio Estudantil</h2><p class="muted">Painel administrativo do projeto de organização das salas.</p></div></div><hr><div class="setting-row"><div><b>Nome do painel</b><p class="muted">Identificação exibida na navegação.</p></div><strong>Grêmio Escolar</strong></div><div class="setting-row"><div><b>Permissões</b><p class="muted">O Grêmio poderá administrar avaliações e salas.</p></div><span class="badge">Administrador</span></div><div class="setting-row"><div><b>Armazenamento</b><p class="muted">Banco de dados ainda não conectado.</p></div><span class="badge pending">Aguardando Supabase</span></div></article><p class="notice">ⓘ Autenticação e permissões reais serão configuradas com Supabase Auth e RLS.</p>
+  <article class="panel settings"><div class="settings-brand"><div class="brand-logo big"><img src="aguia-joao-camargo.png" alt="Águia João Camargo"></div><div><h2>Gestão Escolar</h2><p class="muted">Painel do administrador geral da E.E. Professor João Camargo.</p></div></div><hr><div class="setting-row"><div><b>Nome do painel</b><p class="muted">Identificação exibida na navegação.</p></div><strong>Gestão Escolar</strong></div><div class="setting-row"><div><b>Permissões</b><p class="muted">A Gestão é responsável pela administração geral do sistema.</p></div><span class="badge">Administrador geral</span></div><div class="setting-row"><div><b>Armazenamento</b><p class="muted">Banco de dados ainda não conectado.</p></div><span class="badge pending">Aguardando Supabase</span></div></article><p class="notice">ⓘ Autenticação e permissões reais serão configuradas com Supabase Auth e RLS.</p>
 </section>
 </div></main>
 <div class="toast" id="toast" role="status"></div>
